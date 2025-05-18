@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقارنة الأسعار | Binance Futures vs KuCoin Futures vs BingX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://media.istockphoto.com/id/1491171101/vector/investment-financial-market-logo-design.jpg?s=612x612&w=0&k=20&c=JahwkyzC_HzUEAXPrO3J6CKSPwnlTjn7N9gMB70GWN4=" alt="Logo">
+                <h1>مقارنة الأسعار</h1>
+            </div>
+            <div class="controls">
+                <div class="language-switcher">
+                    <button class="language-btn active" data-lang="ar">العربية</button>
+                    <button class="language-btn" data-lang="fr">Français</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                    <button class="language-btn" data-lang="ma">الدارجة</button>
+                </div>
+                <button class="theme-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="ابحث عن عملة (BTC, ETH...)">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <h3>عدد العملات</h3>
+                <p id="totalCoins">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>أعلى فرق</h3>
+                <p id="maxDiff">-</p>
+            </div>
+            <div class="stat-card">
+                <h3>أدنى فرق</h3>
+                <p id="minDiff">-</p>
+            </div>
+            <div class="stat-card">
+                <h3>متوسط الفرق</h3>
+                <p id="avgDiff">-</p>
+            </div>
+        </div>
+
+        <div class="price-table">
+            <div class="table-header">
+                <div>العملة</div>
+                <div>Binance Futures</div>
+                <div>KuCoin Futures</div>
+                <div>BingX</div>
+                <div>الفرق</div>
+                <div>النسبة</div>
+            </div>
+            <div id="coinsData"></div>
+        </div>
+
+        <div class="last-updated" id="lastUpdated">
+            آخر تحديث: <span id="updateTime">-</span>
+        </div>
+
+        <footer>
+            <p>© 2025 مقارنة الأسعار بين Binance و KuCoin و BingX | جميع الحقوق محفوظة</p>
+            <p>هذه الأداة للأغراض الإعلامية فقط وليست نصيحة مالية</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

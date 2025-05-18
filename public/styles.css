@@ -1,0 +1,60 @@
+/* Existing styles.css with adjustment for table layout */
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; /* Adjusted for BingX column */
+    padding: 15px 20px;
+    background: var(--card-bg);
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; /* Adjusted for BingX column */
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-header, .table-row {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; /* Hide percentage column */
+    }
+    .table-header div:nth-child(1),
+    .table-row div:nth-child(1) {
+        grid-column: 1 / span 5;
+    }
+    .table-header div:not(:first-child),
+    .table-row div:not(:first-child) {
+        text-align: center;
+    }
+    .table-header div:nth-child(6), /* Hide percentage column */
+    .table-row div:nth-child(6) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-header {
+        display: none;
+    }
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .table-row div {
+        display: flex;
+        justify-content: space-between;
+    }
+    .table-row div::before {
+        content: attr(data-label);
+        color: var(--text-secondary);
+        margin-left: 10px;
+    }
+}
+
+/* Rest of the original styles.css remains unchanged */
